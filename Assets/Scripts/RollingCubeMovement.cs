@@ -58,25 +58,25 @@ public class RollingCubeMovement : MonoBehaviour
         {
             case Direction.right:
                 bottomEdge.transform.Rotate(-Vector3.forward * Time.deltaTime * rotationSpeed);
-                if (Mathf.RoundToInt(bottomEdge.transform.localEulerAngles.z) <= 275)
+                if (bottomEdge.transform.localEulerAngles.z <= 275)
                     EndRotation(new Vector3(bottomEdge.transform.localEulerAngles.x, bottomEdge.transform.localEulerAngles.y, 270));
                 break;
 
             case Direction.left:
                 bottomEdge.transform.Rotate(Vector3.forward * Time.deltaTime * rotationSpeed);
-                if (Mathf.RoundToInt(bottomEdge.transform.localEulerAngles.z) >= 85)
+                if (bottomEdge.transform.localEulerAngles.z >= 85)
                     EndRotation(new Vector3(bottomEdge.transform.localEulerAngles.x, bottomEdge.transform.localEulerAngles.y, 90));
                 break;
 
             case Direction.forward:
                 bottomEdge.transform.Rotate(Vector3.right * Time.deltaTime * rotationSpeed);
-                if (Mathf.RoundToInt(bottomEdge.transform.localEulerAngles.x) >= 85)
+                if (bottomEdge.transform.localEulerAngles.x >= 85)
                     EndRotation(new Vector3(90, bottomEdge.transform.localEulerAngles.y, bottomEdge.transform.localEulerAngles.z));
                 break;
 
             case Direction.backward:
                 bottomEdge.transform.Rotate(-Vector3.right * Time.deltaTime * rotationSpeed);
-                if (Mathf.RoundToInt(bottomEdge.transform.localEulerAngles.x) <= 275)
+                if (bottomEdge.transform.localEulerAngles.x <= 275)
                     EndRotation(new Vector3(270, bottomEdge.transform.localEulerAngles.y, bottomEdge.transform.localEulerAngles.z));
                 break;
 
